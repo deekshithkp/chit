@@ -39,6 +39,7 @@
 
             // Create a button element to pick a random person
             let button = document.createElement("button");
+            button.id = "btnDraw";
             button.textContent = "Lucky Draw";
             document.body.appendChild(button);
 
@@ -63,6 +64,28 @@
             // Handle any errors
             console.error(error);
         });
+
+    // Get the current date, hour, and day of the month
+    let date = new Date();
+    let hour = date.getHours();
+    let day = date.getDate();
+
+    // Get the button element by its id
+    let button = document.getElementById("btnDraw");
+
+    // Check if the conditions are met
+    button.disabled = !(hour === 14 && day === 2);
+    let targetDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 2, 14, 0);
+    let month = date.getMonth();
+    if (currentDate > targetDate) {
+        month += 1;
+    }
+    if(button.disabled) {
+        let span = document.createElement('span');
+        let disp = new Date(date.getFullYear(), month, day);
+        span.textContent = $`Next draw @ 2 PM, ${disp.toLocaleString("en-US", { month: "long" })}`;
+        document.body.appendChild(span);
+    }
 </script>
 <style>
     .highlight {
