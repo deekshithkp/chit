@@ -78,7 +78,7 @@
             if(button.disabled) {
                 let span = document.createElement('span');
                 let disp = new Date(date.getFullYear(), month, day);
-                span.textContent = $`Next draw @ 2 PM, ${disp.toLocaleString("en-US", { month: "long" })}`;
+                span.textContent = `Next draw @ 2 PM, ${disp.toLocaleString("en-US", { month: "long" })}`;
                 document.body.appendChild(span);
             }
         })
