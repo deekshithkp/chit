@@ -59,6 +59,8 @@
                 // Add a highlight class to the selected item
                 items[index].classList.add("highlight");
                 button.disabled = true;
+
+                localStorage.setItem('clicked', new Date().getMonth());
             });
 
             // Get the current date, hour, and day of the month
@@ -70,7 +72,7 @@
             //let button = document.getElementById("btnDraw");
 
             // Check if the conditions are met
-            button.disabled = !(hour === 14 && day === 2);
+            button.disabled = !(parseInt(localStorage.getItem('clicked') || 0) < date.getMonth() && (hour === 14 && day === 2));
             let targetDate = new Date(date.getFullYear(), date.getMonth(), 2, 14, 0);
             let month = date.getMonth();
             if (date > targetDate) {
