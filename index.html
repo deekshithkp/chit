@@ -69,8 +69,8 @@
             //let button = document.getElementById("btnDraw");
 
             // Check if the conditions are met
-            button.disabled = !(hour === 14 && day === 2);
-            let targetDate = new Date(date.getFullYear(), date.getMonth(), 2, 14, 0);
+            button.disabled = !(hour === 12 && day === 2);
+            let targetDate = new Date(date.getFullYear(), date.getMonth(), 2, 12, 0);
             let month = date.getMonth();
             if (date > targetDate) {
                 month += 1;
@@ -79,6 +79,10 @@
                 let span = document.createElement('span');
                 let disp = new Date(date.getFullYear(), month, day);
                 span.textContent = `Next draw @ 2 PM, ${disp.toLocaleString("en-US", { month: "long" })}`;
+                span.style.background = 'lightgray';
+
+                const br = document.createElement('br');
+                documnet.body.appendChild(br);
                 document.body.appendChild(span);
             }
         })
