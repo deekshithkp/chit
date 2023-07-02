@@ -70,9 +70,9 @@
 
             // Check if the conditions are met
             button.disabled = !(hour === 14 && day === 2);
-            let targetDate = new Date(currentDate.getFullYear(), currentDate.getMonth(), 2, 14, 0);
+            let targetDate = new Date(date.getFullYear(), date.getMonth(), 2, 14, 0);
             let month = date.getMonth();
-            if (currentDate > targetDate) {
+            if (date > targetDate) {
                 month += 1;
             }
             if(button.disabled) {
