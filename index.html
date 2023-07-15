@@ -54,11 +54,19 @@
                     }
 
                 let prevIndex = null;
-
+                let count = 5;
+                
                 // Pick one random index five times
-              for (let i = 0; i < 5; i++) {
+                do {
+              //for (let i = 0; i < 5; i++) {
                     let index = Math.floor(Math.random() * items.length);
 
+                    // ignore if index is around the previous selected index
+                    if (prevIndex != null && (
+                        (index == prevIndex) || (index == prevIndex + 1) || (index == prevIndex - 1)) {
+                            continue;
+                    }
+                    
                     // Add a highlight class to the selected item after a delay
                     setTimeout(() => {
                           // Remove the highlight class from the previous item if it exists
@@ -72,7 +80,8 @@
                       // Update the previous index
                       prevIndex = index;
                     }, i * 1000);
-              }
+                    count--;
+              } while(!count);
 
                     //// Pick a random index from 0 to the length of the array
                     //let index = Math.floor(Math.random() * data.length);
