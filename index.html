@@ -45,21 +45,22 @@
 
             // Add a click event listener to the button
             button.addEventListener("click", () => {
-                // Get all the list items
-                let items = document.querySelectorAll("#people-list li");
+                for(i = 0; i < 5; i++) {
+                    // Get all the list items
+                    let items = document.querySelectorAll("#people-list li");
 
-                // Remove any previous highlight class
-                for (let item of items) {
-                    item.classList.remove("highlight");
+                    // Remove any previous highlight class
+                    for (let item of items) {
+                        item.classList.remove("highlight");
+                    }
+
+                    // Pick a random index from 0 to the length of the array
+                    let index = Math.floor(Math.random() * data.length);
+
+                    // Add a highlight class to the selected item
+                    items[index].classList.add("highlight");
                 }
-
-                // Pick a random index from 0 to the length of the array
-                let index = Math.floor(Math.random() * data.length);
-
-                // Add a highlight class to the selected item
-                items[index].classList.add("highlight");
                 button.disabled = true;
-
                 localStorage.setItem('clicked', new Date().getMonth());
             });
 
