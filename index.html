@@ -46,7 +46,6 @@
             // Add a click event listener to the button
             button.addEventListener("click", () => {
                 for(i = 0; i < 5; i++) {
-                    setTimeout(() => {
                     // Get all the list items
                     let items = document.querySelectorAll("#people-list li");
 
@@ -60,7 +59,6 @@
 
                     // Add a highlight class to the selected item
                     items[index].classList.add("highlight");
-                }, 2000);
                 }
                 button.disabled = true;
                 localStorage.setItem('clicked', new Date().getMonth());
