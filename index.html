@@ -57,14 +57,15 @@
                 let count = 5;
                 
                 // Pick one random index five times
-                do {
-              //for (let i = 0; i < 5; i++) {
+                //do {
+                for (let i = 0; i < 5; i++) {
                     let index = Math.floor(Math.random() * items.length);
 
                     // ignore if index is around the previous selected index
                     if (prevIndex != null && (
                         (index == prevIndex) || (index == prevIndex + 1) || (index == prevIndex - 1))
                         ){
+                            --i;
                             continue;
                     }
                     
@@ -80,9 +81,8 @@
 
                       // Update the previous index
                       prevIndex = index;
-                    }, 1000);
-                    count--;
-              } while(count);
+                    }, i * 1000);
+              } //while(count);
 
                     //// Pick a random index from 0 to the length of the array
                     //let index = Math.floor(Math.random() * data.length);
