@@ -79,9 +79,11 @@
                       // Add a highlight class to the current item
                       items[index].classList.add("highlight");
 
+                      // Update the previous index
+                      prevIndex = index;
+
                     }, i * 1000);
-                  // Update the previous index
-                  prevIndex = index;
+                  
               } //while(count);
 
                     //// Pick a random index from 0 to the length of the array
