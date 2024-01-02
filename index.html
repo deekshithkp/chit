@@ -113,6 +113,7 @@
             if (date > targetDate) {
                 month += 1;
             }
+            button.disabled = false;
             if(button.disabled) {
                 let span = document.createElement('span');
                 let disp = new Date(date.getFullYear(), month, day);
