@@ -94,7 +94,7 @@
 
                     //// Add a highlight class to the selected item
                     //items[index].classList.add("highlight");
-                // button.disabled = true;
+                button.disabled = true;
                 localStorage.setItem('clicked', new Date().getMonth());
             });
 
@@ -113,7 +113,7 @@
             if (date > targetDate) {
                 month += 1;
             }
-            button.disabled = false;
+            // button.disabled = false;
             if(button.disabled) {
                 let span = document.createElement('span');
                 let disp = new Date(date.getFullYear(), month, day);
